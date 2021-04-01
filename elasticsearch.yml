@@ -1,0 +1,40 @@
+bootstrap.memory_lock: false
+cluster.initial_master_nodes: esnode1,esnode2,esnode3
+cluster.name: test-cluster
+discovery.seed_hosts: esnode1:9300,esnode2:9300,esnode3:9300
+http.host: 0.0.0.0
+http.port: 9200
+node.data: true
+node.master: true
+node.name: esnode1
+transport.host: 0.0.0.0
+transport.port: 9300
+xpack.security.authc.realms.file.file1.order: 0
+xpack.security.authc.realms.native.native1.order: 1
+
+
+
+
+#################################### Paths ####################################
+
+# Path to directory containing configuration (this file and logging.yml):
+
+path.data: /opt/elasticsearch/data
+
+path.logs: /opt/elasticsearch/logs
+
+
+action.auto_create_index: true
+
+xpack.security.enabled: true
+
+xpack.security.transport.ssl.enabled: true
+xpack.security.transport.ssl.verification_mode: "certificate"
+xpack.security.transport.ssl.keystore.path: "/etc/elasticsearch/certs/my-keystore.p12"
+xpack.security.transport.ssl.truststore.path: "/etc/elasticsearch/certs/my-ca.p12"
+
+xpack.security.http.ssl.enabled: true
+xpack.security.http.ssl.keystore.path: "/etc/elasticsearch/certs/my-keystore.p12"
+xpack.security.http.ssl.truststore.path: "/etc/elasticsearch/certs/my-ca.p12"
+
+xpack.security.http.ssl.verification_mode: "certificate"
